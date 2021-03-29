@@ -4,7 +4,7 @@ const Event = ({ event, loadedData }) => {
   const deleteEvent = (id) => {
     console.log(id);
 
-    fetch(`http://localhost:5000/deleteEvent/${id}`, {
+    fetch(`https://evening-shore-20176.herokuapp.com/deleteEvent/${id}`, {
         method: 'DELETE',
         headers: {'Content-Type':'application/json'}
     })

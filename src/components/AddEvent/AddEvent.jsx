@@ -13,15 +13,17 @@ const AddEvent = () => {
     };
     console.log(eventData);
 
-    fetch(`http://localhost:5000/addEvent`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(eventData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    if (eventData.imageURL !== null) {
+      fetch(`https://evening-shore-20176.herokuapp.com/addEvent`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(eventData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
   };
 
   const handleImageUpload = (e) => {
